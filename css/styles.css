@@ -1,0 +1,42 @@
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: auto;
+	width: 1440px;
+	height: 696px;
+	background-color: #fafafa;
+}
+
+li {
+	list-style-type: none;
+}
+
+img {
+	width: 360px;
+	height: 200px;
+}
+
+img:hover {
+	margin-top: -4px;
+	width: 376px;
+
+	height: 208px;
+	cursor: url("../js/bxs_hand-down.svg"), auto; /* Path to the blue cursor image */
+	background-color: blue;
+}
+
+.gallery {
+	display: flex;
+	justify-content: center;
+	flex-wrap: wrap;
+	column-gap: 24px;
+	row-gap: 24px;
+}
+
+#boxes {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 5px;
+}
