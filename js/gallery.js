@@ -74,7 +74,8 @@ images.forEach(image => {
 
   const galleryLink = document.createElement('a');
   galleryLink.classList.add('gallery-link');
-  galleryLink.href = '#'; // Set href to '#' to avoid default link behavior
+  galleryLink.href = image.original;
+  galleryLink.setAttribute('data-lightbox', "gallery");
 
   const galleryImage = document.createElement('img');
   galleryImage.classList.add('gallery-image');
@@ -94,16 +95,15 @@ galleryContainer.addEventListener('click', function (event) {
   if (event.target.classList.contains('gallery-image')) {
     // Get the URL of the large image from the data-source attribute of the image
     const largeImageURL = event.target.getAttribute('data-source');
-    // Log the URL of the large image to the console
-    console.log('Large image URL:', largeImageURL);
+
     // Prevent the default link behavior
     event.preventDefault();
 
     // Open a modal window with the large image
-    setTimeout(() => {
-      const lightbox = basicLightbox.create(`<img src="${largeImageURL}" alt="Large Image">`);
-      lightbox.show();
-    }, 100);
+
+    const lightbox = basicLightbox.create(`<img src="${largeImageURL}" alt="Large Image">`);
+    lightbox.show();
+
 
   }
 });
